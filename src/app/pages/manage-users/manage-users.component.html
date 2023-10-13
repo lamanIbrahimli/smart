@@ -1,0 +1,18 @@
+<form [formGroup]="userForm" (ngSubmit)="addUser()" class="manage-users-container">
+  <h2>Manage users</h2>
+  <div class="form-group">
+    <label for="name" class="label">Name:</label>
+    <input type="text" id="name" formControlName="name" class="input-field" placeholder="Enter your name" />
+  </div>
+  <div class="form-group">
+    <label for="surname" class="label">Surname:</label>
+    <input type="text" id="surname" formControlName="surname" class="input-field" placeholder="Enter your surname" />
+  </div>
+  <div class="form-group">
+    <label for="email" class="label">Email:</label>
+    <input type="email" id="email" formControlName="email" class="input-field" placeholder="Enter your email" />
+  </div>
+  <div class="form-group">
+    <button type="submit" class="submit-button">Add User</button>
+  </div>
+</form>

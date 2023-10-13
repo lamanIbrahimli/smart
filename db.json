@@ -1,0 +1,63 @@
+{
+  "organizations": [],
+  "users": [
+    {
+      "name": "svds",
+      "email": "wwww@gmail.com",
+      "password": "dcszdv",
+      "id": 1
+    },
+    {
+      "name": "dcsdc",
+      "email": "leman.ibrahimli23@gmail.com",
+      "password": "ascadc",
+      "phoneNumber": "ascadc",
+      "address": "ascadc",
+      "id": 2
+    },
+    {
+      "name": "scdwse",
+      "email": "lexahimli23@gmail.gmail",
+      "password": "aesdcwsfe",
+      "phoneNumber": "aesdcwsfe",
+      "address": "aesdcwsfe",
+      "id": 3
+    },
+    {
+      "name": "leman ibrahimli",
+      "surname": "efsrve",
+      "email": "leman.ibrahimli23@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "sdv",
+      "email": "ibrahimli23leman@gmail.com",
+      "password": "323ddd",
+      "phoneNumber": "323ddd",
+      "address": "323ddd",
+      "id": 5
+    }
+  ],
+  "tasks": [
+    {
+      "title": "sdcsdc",
+      "description": "dx cscd",
+      "deadline": "2023-10-10",
+      "status": "done",
+      "assignedUsers": [
+        3
+      ],
+      "id": 1
+    },
+    {
+      "title": "sdc",
+      "description": "sdcsdc",
+      "deadline": "2023-10-11",
+      "status": "todo",
+      "assignedUsers": [
+        2
+      ],
+      "id": 2
+    }
+  ]
+}

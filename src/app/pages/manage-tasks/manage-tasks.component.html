@@ -1,0 +1,89 @@
+<div class="todo-list-container">
+
+  <div class="example-container">
+    <h2>To do</h2>
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[pendingList,doneList,todoList]"
+      class="example-list"
+      id="todo"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag [cdkDragData]="{ id: item.id }" >{{item.title}}-{{item.description}}</div>
+      <div class="example-button-row cursor-pointer-button" (click)="openDialog()">
+        <div class="todo-list-container"><button mat-button >New Task</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Pending</h2>
+
+    <div
+      cdkDropList
+      #pendingList="cdkDropList"
+      [cdkDropListData]="pending"
+      [cdkDropListConnectedTo]="[pendingList,doneList,todoList]"
+      class="example-list"
+      id="pending"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of pending" cdkDrag [cdkDragData]="{ id: item.id }">{{item.title}}-{{item.description}}</div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Done</h2>
+
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[pendingList,doneList,todoList]"
+      class="example-list"
+      id="done"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of done" cdkDrag [cdkDragData]="{ id: item.id }">{{item.title}}-{{item.description}}</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="todo-list-container">
+  <div *ngIf="showForm" class="modal-overlay">
+    <div class="modal-dialog form-container">
+      <!-- Close button to hide the modal -->
+      <button class="btn-close-modal" (click)="showForm = false">&times;</button>
+
+      <div class="form-group">
+        <label>Title:</label>
+        <input class="form-control" [(ngModel)]="task.title" />
+      </div>
+      <div class="form-group">
+        <label>Description:</label>
+        <textarea class="form-control" [(ngModel)]="task.description"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Deadline:</label>
+        <input class="form-control" type="date" [(ngModel)]="task.deadline" />
+      </div>
+      <div class="form-group">
+        <label>Status:</label>
+        <select class="form-control" [(ngModel)]="task.status">
+          <option *ngFor="let option of statusOptions" [ngValue]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Assigned Users:</label>
+        <select class="form-control" [(ngModel)]="task.assignedUsers" multiple>
+          <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
+        </select>
+      </div>
+
+      <button class="btn-create-task" (click)="createTask()">Create Task</button>
+    </div>
+  </div>
+</div>
+
+
+
